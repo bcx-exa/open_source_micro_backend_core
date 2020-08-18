@@ -1,6 +1,6 @@
 {
   "name": "micro-base-core",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "Boilerplate for building a micro-service",
   "main": "src/app.ts",
   "scripts": {

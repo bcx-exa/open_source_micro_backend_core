@@ -16,6 +16,7 @@ This is opinionated boilerplate code that aims to meet the requirements set out 
 - [x] 8. Documented
 - [x] 9. Cost Effective 
 - [ ] 10. CICD
+- [ ] 11. Audit
 
 ---
 # Quick Start 
@@ -26,7 +27,7 @@ This is opinionated boilerplate code that aims to meet the requirements set out 
 1. Install VSCode: https://code.visualstudio.com/download
 2. Install Nodejs: https://nodejs.org/en/download/
 3. Install AWS CLI: https://awscli.amazonaws.com/AWSCLIV2.msi.
-4. Fork the repo
+4. Fork or clone the repo
 
 ---
 ### Initial Setup
@@ -91,8 +92,8 @@ npm run deploy:prod
 
 ## Requirements Mapping Table
 
-| Technical Component | Business Requirement       | Note |
-| ------------------- | -------------------------- | ---- |
+| Technical Component | Business Requirement       | 
+| ------------------- | -------------------------- | 
 | Serverless          | Independantly Deployable   |
 | Serverless Offline  | Local Debugging            |
 | Nodemon             | Local Debugging (Rapid)    |
@@ -125,14 +126,15 @@ You can modify the architecture.drawio file inside the docs file should you wish
 
 # To-Do's & Bugs
 
-- Update Readme
 - Test out buildspec
 - Write unit tests
 - Create codebuild serverless file
 
 # Version
 
-# Thank you's
+- 1.0.0 
+
+# Contributions
 
 - Serverless team
 - Cloudformation team
