@@ -1,0 +1,5 @@
+DomainName: api-micro.freedatsandbox.xyz
+Region: eu-west-1
+AcmStackName: 'acm-micro-base-stack'
+StackName: 'micro-base-stack'
+HostedZoneId: Z0466911267U3J6P7AN1V
