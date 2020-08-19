@@ -1,4 +1,4 @@
-# Introduction (WIP) ![buildstatus](docs/assets/passing.svg)
+# Introduction ![buildstatus](docs/assets/passing.svg)
 
 ![bcxexa](docs/assets/exa_backgrond.jpg)
 
@@ -85,15 +85,19 @@ npm run deploy:dev
 npm run deploy:uat
 npm run deploy:prod
 ```
+## Tips & Tricks
+
 > Note: Lambda cold start plays a role in showing the initial load of swagger ui interface.  
 
-> Note: Initial deployments can take up to 40 min. This because certificates needs to be validated and DNS needs to propogate.  
+> Tip: Initial deployments can take up to 40 min. This because certificates needs to be validated and DNS needs to propogate. You can fast track the deployment by logging in the console and creating the DNS records manually.
+
+![fastrack](docs/assets/fastrack_cert_validation.png)
 # Details Explanations
 
 ## Requirements Mapping Table
 
-| Technical Component | Business Requirement       | 
-| ------------------- | -------------------------- | 
+| Technical Component | Business Requirement       |
+| ------------------- | -------------------------- |
 | Serverless          | Independantly Deployable   |
 | Serverless Offline  | Local Debugging            |
 | Nodemon             | Local Debugging (Rapid)    |
