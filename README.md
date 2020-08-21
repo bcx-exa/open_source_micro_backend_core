@@ -32,7 +32,7 @@ This is opinionated boilerplate code that aims to meet the requirements set out 
 ---
 ### Initial Setup
 ---
-   1. Install Serverless globally
+1. Install Serverless globally
 ```bash
 npm install -g serverless
 ```
@@ -44,22 +44,26 @@ serverless config credentials --provider aws --key <YOURKEY> --secret <YOURSECRE
 ```bash
 npm install
 ```
-4. Configure the serverless framework environment variables under path => cicd/env
-```bash
-DomainName: <YOUR DOMAIN>
-Region: <REGION>
-AcmStackName: <YOUR ACM STACK NAME>
-StackName: <YOUR STACK NAME>
-HostedZoneId: <YOUR HOSTED ZONE ID>
-```
+4. Configure your .env files with the appropriate settings. Situation in environments folder
 
-5. (Optional) Add a .env file to the root directory of your project.  (Same level as package.json)
 ```bash
 PORT=<PORT>
-NODE_ENV=<ENV>
-APP_NAME=<APP_NAME>
+STAGE=<STAGE>
+NODE_ENV=<NODE ENV>
+DOMAIN_NAME=<DOMAIN NAME>
+APP_NAME=<APP NAME>
+REGION=<YOUR REGION>
 ```
-> The .env file is used by the node application when you do local development. The environment files situated under the cicd folder is specific to the deployment of resources in AWS.
+
+5. Add a .env.local file to environments folder to store your secrets. This file won't be added to your repo.
+
+```bash
+ACCESS_KEY_ID=<ACCESS_KEY_ID>
+SECRET_KEY=<SECRET_KEY>
+AWS_PROFILE=<PROFILE_NAME>
+HOSTED_ZONE_ID=<HOSTED ZONE ID>
+```
+> Coffee for the team if you add your secrets to the public repo.
 ---  
 ## For Local Development
 ---
@@ -134,9 +138,15 @@ You can modify the architecture.drawio file inside the docs file should you wish
 - Write unit tests
 - Create codebuild serverless file
 
-# Version
+# Change Log
 
 - 1.0.0 
+
+The initial working template
+
+- 2.0.0
+
+Changed how underlying env variables work. One set of env variables both iac components & app
 
 # Contributions
 

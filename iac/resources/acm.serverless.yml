@@ -1,0 +1,32 @@
+service:
+  name: ${env:STAGE}-${env:REGION}-${env:APP_NAME}
+plugins:
+  - serverless-dotenv-plugin
+custom:
+  dotenv:
+    basePath: environments/
+    exclude: # By default dotenv will add the env to your functions
+      - ACCESS_KEY_ID
+      - SECRET_ACCESS_KEY 
+provider:
+  name: aws
+  region: ${env:REGION, 'us-east-1'}
+  stage: ${env:STAGE, 'dev'}
+  stackName: ${self:service.name}-stack
+
+resources:
+  Resources:
+    ApiGatewayCert:
+      Type: AWS::CertificateManager::Certificate
+      Properties: 
+        DomainName: ${env:DOMAIN_NAME}
+        DomainValidationOptions:
+          - DomainName: ${env:DOMAIN_NAME}
+            ValidationDomain: ${env:DOMAIN_NAME}
+        ValidationMethod: DNS
+  Outputs:
+    ApiGatewayCert:
+      Value: 
+        Ref: ApiGatewayCert
+      Export:
+        Name: ${self:service.name}-ApiGatewayCert
